@@ -16,7 +16,8 @@ interface NewsInterface {
 
     @GET("v2/everything")
     fun getAllNews(
-        @Query("q") q:String,
-        @Query("page") page : Int
+        @Query("q") q: String,
+        @Query("page") page : Int,
+        @Query("apiKey") apiKey : String
     ): Call<News>
 }

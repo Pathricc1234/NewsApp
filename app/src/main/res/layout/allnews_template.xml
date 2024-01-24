@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="100dp"
+    android:layout_height="110dp"
     android:layout_margin="12dp"
     app:cardElevation="10dp"
     app:cardCornerRadius="20dp">
@@ -20,22 +20,23 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="6dp"
+            android:layout_margin="4dp"
             android:orientation="vertical"
-            android:layout_gravity="center">
+            android:gravity="center">
             <TextView
                 android:id="@+id/allnews_headline"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
+                android:textSize="14dp"
                 android:textColor="@color/black"
+                android:textStyle="bold"
                 android:text="Headline">
             </TextView>
             <TextView
                 android:id="@+id/allnews_source"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
+                android:textSize="12dp"
                 android:textColor="@color/black"
                 android:text="Source">
             </TextView>
@@ -43,7 +44,7 @@
                 android:id="@+id/allnews_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textColor="@color/black"
                 android:text="Author">
             </TextView>
@@ -51,7 +52,7 @@
                 android:id="@+id/allnews_published"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
+                android:textSize="10dp"
                 android:textColor="@color/black"
                 android:text="Date Published">
             </TextView>

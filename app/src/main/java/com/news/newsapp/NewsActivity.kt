@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.news.newsapp.adaptor.AllNewsAdaptor
 import com.news.newsapp.adaptor.HeadlineAdaptor
 import com.news.newsapp.api.ApiClient
 import com.news.newsapp.models.News
@@ -18,7 +19,7 @@ class NewsActivity : AppCompatActivity() {
     lateinit var headlineAdapter : HeadlineAdaptor
 
     lateinit var allNewsRecView : RecyclerView
-    lateinit var allNewsAdapter : HeadlineAdaptor
+    lateinit var allNewsAdapter : AllNewsAdaptor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,7 @@ class NewsActivity : AppCompatActivity() {
         allNewsRecView = findViewById(R.id.all_news)
 
         getHeadlines()
+        getAllNews()
     }
 
     private fun getHeadlines(){
@@ -39,7 +41,6 @@ class NewsActivity : AppCompatActivity() {
                     headlineRecView.layoutManager = LinearLayoutManager(this@NewsActivity, LinearLayoutManager.HORIZONTAL,false)
                     headlineAdapter = HeadlineAdaptor(this@NewsActivity, news.articles)
                     headlineRecView.adapter = headlineAdapter
-                    getAllNews()
                 }
             }
 
@@ -50,13 +51,13 @@ class NewsActivity : AppCompatActivity() {
     }
 
     private fun getAllNews(){
-        val news = ApiClient.newsInstance.getAllNews("bank mandiri",1)
+        val news = ApiClient.newsInstance.getAllNews("bank mandiri",1, API_KEY)
         news.enqueue(object : retrofit2.Callback<News>{
             override fun onResponse(call: retrofit2.Call<News>, response: Response<News>) {
                 val news = response.body()
                 if(news != null){
                     allNewsRecView.layoutManager = LinearLayoutManager(this@NewsActivity,LinearLayoutManager.VERTICAL,false)
-                    allNewsAdapter = HeadlineAdaptor(this@NewsActivity, news.articles)
+                    allNewsAdapter = AllNewsAdaptor(this@NewsActivity, news.articles)
                     allNewsRecView.adapter = allNewsAdapter
                 }
             }
