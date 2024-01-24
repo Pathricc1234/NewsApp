@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.news.newsapp.R
-import com.news.newsapp.models.Articles
+import com.news.newsapp.utils.SelectedCategory
 
-class CategoryAdaptor(private val context : Context, private val categories : List<String>) : RecyclerView.Adapter<CategoryAdaptor.ViewHolder>() {
+class CategoryAdaptor(private val context : Context, private val categories : List<String>, private val categoryListener : SelectedCategory) : RecyclerView.Adapter<CategoryAdaptor.ViewHolder>() {
 
     companion object {
         var selectedCategory: String = ""
@@ -32,6 +32,7 @@ class CategoryAdaptor(private val context : Context, private val categories : Li
         override fun onClick(view: View) {
             selectedCategory = categories[adapterPosition]
             notifyDataSetChanged()
+            categoryListener.onCategorySelected(selectedCategory)
         }
     }
 
