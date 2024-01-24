@@ -25,7 +25,7 @@ class NewsActivity : AppCompatActivity() {
     lateinit var allNewsRecView : RecyclerView
     lateinit var allNewsAdapter : AllNewsAdaptor
 
-    val categories: List<String> = listOf("Economy", "Technology","Politics","Health","Entertainment","Science")
+    val categories: List<String> = listOf("Economy", "Technology","Politics","Entertainment","Science")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,7 +65,7 @@ class NewsActivity : AppCompatActivity() {
     }
 
     private fun getAllNews(){
-        val news = ApiClient.newsInstance.getAllNews("bank mandiri",1, API_KEY)
+        val news = ApiClient.newsInstance.getAllNews(CategoryAdaptor.selectedCategory,1, API_KEY)
         news.enqueue(object : retrofit2.Callback<News>{
             override fun onResponse(call: retrofit2.Call<News>, response: Response<News>) {
                 val news = response.body()
@@ -73,6 +73,7 @@ class NewsActivity : AppCompatActivity() {
                     allNewsRecView.layoutManager = LinearLayoutManager(this@NewsActivity,LinearLayoutManager.VERTICAL,false)
                     allNewsAdapter = AllNewsAdaptor(this@NewsActivity, news.articles)
                     allNewsRecView.adapter = allNewsAdapter
+                    getAllNews()
                 }
             }
 
