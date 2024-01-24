@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.news.newsapp.adaptor.AllNewsAdaptor
+import com.news.newsapp.adaptor.CategoryAdaptor
 import com.news.newsapp.adaptor.HeadlineAdaptor
 import com.news.newsapp.api.ApiClient
 import com.news.newsapp.models.News
@@ -18,17 +19,24 @@ class NewsActivity : AppCompatActivity() {
     lateinit var headlineRecView : RecyclerView
     lateinit var headlineAdapter : HeadlineAdaptor
 
+    lateinit var categoryRecView : RecyclerView
+    lateinit var categoryAdaptor : CategoryAdaptor
+
     lateinit var allNewsRecView : RecyclerView
     lateinit var allNewsAdapter : AllNewsAdaptor
+
+    val categories: List<String> = listOf("Economy", "Technology","Politics","Health","Entertainment","Science")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         headlineRecView = findViewById(R.id.headline_news)
+        categoryRecView = findViewById(R.id.category)
         allNewsRecView = findViewById(R.id.all_news)
 
         getHeadlines()
+        getCategory()
         getAllNews()
     }
 
@@ -48,6 +56,12 @@ class NewsActivity : AppCompatActivity() {
                 Log.d("Log: ", "Error Getting News")
             }
         })
+    }
+
+    private fun getCategory(){
+        categoryRecView.layoutManager = LinearLayoutManager(this@NewsActivity, LinearLayoutManager.HORIZONTAL,false)
+        categoryAdaptor = CategoryAdaptor(this@NewsActivity,categories)
+        categoryRecView.adapter = categoryAdaptor
     }
 
     private fun getAllNews(){
