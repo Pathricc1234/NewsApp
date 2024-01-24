@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.news.newsapp.R
@@ -46,10 +47,11 @@ class CategoryAdaptor(private val context : Context, private val categories : Li
         holder.categoryView.text = category
 
         if (selectedCategory == category) {
-            holder.itemView.setBackgroundColor(ContextCompat.getColor(context, R.color.purple_200))
+            holder.itemView.findViewById<CardView>(R.id.cardview).setCardBackgroundColor(ContextCompat.getColor(context, R.color.purple_500))
             holder.categoryView.setTextColor(ContextCompat.getColor(context, R.color.white))
-        } else {
-            holder.itemView.setBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
+        }
+        else {
+            holder.itemView.findViewById<CardView>(R.id.cardview).setCardBackgroundColor(ContextCompat.getColor(context, android.R.color.white))
             holder.categoryView.setTextColor(ContextCompat.getColor(context, R.color.black))
         }
     }
