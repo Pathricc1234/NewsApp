@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.news.newsapp.R
 import com.news.newsapp.models.Articles
-import com.news.newsapp.utils.Constant.Companion.customImg
+import com.news.newsapp.utils.Constant
 import com.news.newsapp.utils.TimeFormatter
-import com.squareup.picasso.Picasso
 
 class HeadlineAdaptor(private val context: Context, private val news: List<Articles>): RecyclerView.Adapter<HeadlineAdaptor.ViewHolder>() {
 
@@ -30,12 +30,7 @@ class HeadlineAdaptor(private val context: Context, private val news: List<Artic
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currNews = news[position]
-        if(currNews.urlToImage != null) {
-            Picasso.get().load(currNews.urlToImage).into(holder.imageView)
-        }
-        else{
-            Picasso.get().load(customImg).into(holder.imageView)
-        }
+        Glide.with(context).load(currNews.urlToImage).error(Constant.customImg).into(holder.imageView)
         holder.headlineView.text = currNews.title
         holder.sourceView.text = currNews.source.name
         if(currNews.author != null){
