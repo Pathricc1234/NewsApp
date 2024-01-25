@@ -6,7 +6,7 @@
     android:layout_width="100dp"
     android:layout_height="40dp"
     android:layout_margin="4dp"
-    app:cardCornerRadius="20dp"
+    app:cardCornerRadius="10dp"
     app:cardBackgroundColor="@color/white">
     <TextView
         android:id="@+id/category_name"
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
+        android:fontFamily="@font/helvetica"
         android:textColor="@color/black"
-        android:text="Category">
-    </TextView>
+        android:text="Category"></TextView>
 </androidx.cardview.widget.CardView>

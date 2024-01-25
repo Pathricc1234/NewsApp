@@ -28,34 +28,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="12dp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/helvetica"
+                android:textColor="@color/purple_500"
                 android:textStyle="bold"
-                android:text="Headline">
-            </TextView>
+                android:text="Headline"></TextView>
             <TextView
                 android:id="@+id/allnews_source"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="12dp"
-                android:textColor="@color/black"
-                android:text="Source">
-            </TextView>
+                android:fontFamily="@font/helvetica"
+                android:textSize="10dp"
+                android:textColor="@color/purple_500"
+                android:text="Source"></TextView>
             <TextView
                 android:id="@+id/allnews_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica"
                 android:textSize="10dp"
-                android:textColor="@color/black"
-                android:text="Author">
-            </TextView>
+                android:textColor="@color/purple_500"
+                android:text="Author"></TextView>
             <TextView
                 android:id="@+id/allnews_published"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica"
                 android:textSize="10dp"
-                android:textColor="@color/black"
-                android:text="Date Published">
-            </TextView>
+                android:textColor="@color/purple_500"
+                android:text="Date Published"></TextView>
         </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

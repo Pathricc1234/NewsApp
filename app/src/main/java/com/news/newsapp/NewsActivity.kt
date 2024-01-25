@@ -26,7 +26,7 @@ class NewsActivity : AppCompatActivity(), SelectedCategory {
     lateinit var allNewsRecView : RecyclerView
     lateinit var allNewsAdapter : AllNewsAdaptor
 
-    val categories: List<String> = listOf("Economy", "Technology","Politics","Entertainment","Science")
+    val categories: List<String> = listOf("Indonesia","Economy", "Technology","Politics","Entertainment","Science")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

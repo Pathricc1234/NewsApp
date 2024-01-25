@@ -11,7 +11,7 @@
         android:id="@+id/news_img"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.5"
+        android:alpha="0.3"
         android:scaleType="centerCrop"></ImageView>
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,24 +25,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
+            android:fontFamily="@font/helvetica"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/purple_500"
             android:text="News_Headline"></TextView>
         <TextView
             android:id="@+id/top_news_source"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="14dp"
+            android:fontFamily="@font/helvetica"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/purple_500"
             android:text="Source"></TextView>
         <TextView
             android:id="@+id/top_news_author"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="12dp"
+            android:fontFamily="@font/helvetica"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/purple_500"
             android:text="Author"></TextView>
         <TextView
             android:id="@+id/top_news_publish"
@@ -50,8 +53,8 @@
             android:layout_height="wrap_content"
             android:textSize="12dp"
             android:textStyle="bold"
-            android:textColor="@color/black"
-            android:text="Date Published">
-        </TextView>
+            android:fontFamily="@font/helvetica"
+            android:textColor="@color/purple_500"
+            android:text="Date Published"></TextView>
     </LinearLayout>
 </androidx.cardview.widget.CardView>
