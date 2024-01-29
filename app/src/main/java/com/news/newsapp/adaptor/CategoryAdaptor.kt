@@ -13,9 +13,7 @@ import com.news.newsapp.utils.SelectedCategory
 
 class CategoryAdaptor(private val context : Context, private val categories : List<String>, private val categoryListener : SelectedCategory) : RecyclerView.Adapter<CategoryAdaptor.ViewHolder>() {
 
-    companion object {
-        var selectedCategory: String = ""
-    }
+    var selectedCategory : String = ""
 
     init {
         if (categories.isNotEmpty()) {
